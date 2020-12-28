@@ -1,0 +1,84 @@
+.container {
+  height: 100%;
+  font-size: var(--font-size);
+  color: var(--base-color);
+  display: flex;
+  .ant-layout{
+    background: transparent;
+    flex: 0 0 800px;
+  }
+  .ant-layout-header,
+  .ant-layout-sider{
+    background: transparent;
+  }
+  // 不展示 upload list
+  .ant-upload-list{
+    display: none;
+  }
+  
+  .menu{
+    flex: 0 0 256px;
+    padding-top: 32px;
+  }
+  .upload-wrapper{
+    flex: 1;
+  }
+  // 单文件上传
+  .single-upload-wrapper{
+    .single-upload-info{
+      line-height: 1.5;
+      >div{
+        margin-bottom: 10px;
+        &:nth-child(1){
+          margin-top: 10px;
+        }
+      }
+      .button-wrapper{
+        .ant-btn{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  
+  .mul-upload-wrapper{
+    .mul-upload-info{
+      line-height: 1.5;
+      margin-top: 10px;
+      .upload-item{
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #dddddd;
+        >div{
+          flex:1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          &:first-child{
+            flex: 0 0 185px;
+            width: 185px;
+            .title{
+              width: 100%;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+            }
+          }
+          &:nth-child(2),
+          &:nth-child(3){
+            flex: 0 0 100px;
+          }
+        }
+        .button-wrapper{
+            .ant-btn{
+              margin-right: 10px;
+            }
+          }
+      }
+    }
+  }
+}
+

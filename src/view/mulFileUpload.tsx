@@ -2,11 +2,11 @@ import { UploadOutlined } from '@ant-design/icons';
 import xyUpload from '@xylink/xy-upload-sdk';
 import { Button, message, Upload } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
-import { defaultConfig, statusMap, statusTextMap } from '../constants';
+import { statusMap, statusTextMap } from '../constants';
 import { IClient, IFileData, IError, IResource } from '../type';
 
 const IndexView = () => {
-  const uploadClients = useRef([]);
+  const uploadClients = useRef<IClient[]>([]);
   const [fileList, setFileList] = useState<IFileData[]>([]);
 
   useEffect(() => {
@@ -30,17 +30,22 @@ const IndexView = () => {
   };
 
   const getClient = (id: number) => {
-    const client = xyUpload.createClient(defaultConfig);
+    // todo 此处请填写自己的配置信息
+    const config = {
+      server: 'xxx',
+      enterpriseId: 'xxx',
+      sdkToken: 'xxx',
+      storeType: 'xxx'
+    };
+    const client = xyUpload.createClient(config);
 
     client.on('success', (res: IResource) => {
-      console.log(res);
       setFileData(id, {
         status: statusMap.success
       });
     });
 
     client.on('error', (err: IError) => {
-      console.log('error: ', err);
       message.error(err.errorMessage);
     });
 
@@ -75,8 +80,6 @@ const IndexView = () => {
   };
 
   const beforeUpload = (file: any, files: any[]) => {
-    console.log(file);
-    console.log(files);
     // const files = e.target.files;
     const clients: IClient[] = [];
     const fileList: IFileData[] = [];
@@ -99,9 +102,9 @@ const IndexView = () => {
   };
 
   const onUpload = async (id: number) => {
-    const uploadClient = uploadClients.current.find((item: IClient) => {
+    const uploadClient: IClient = uploadClients.current.find((item: IClient) => {
       return item.id === id;
-    });
+    }) as IClient;
     const { file, client } = uploadClient;
     await client.startUpload(file);
   };
@@ -109,7 +112,7 @@ const IndexView = () => {
   const pauseUpload = async (id: number) => {
     const uploadClient = uploadClients.current.find((item: IClient) => {
       return item.id === id;
-    });
+    }) as IClient;
     const { client } = uploadClient;
     // 暂停分片上传。
     await client.pauseUpload();
@@ -118,7 +121,7 @@ const IndexView = () => {
   const resumeUpload = async (id: number) => {
     const uploadClient = uploadClients.current.find((item: IClient) => {
       return item.id === id;
-    });
+    }) as IClient;
     const { client } = uploadClient;
     // 暂停分片上传。
     await client.resumeUpload();
@@ -127,7 +130,7 @@ const IndexView = () => {
   const cancelUpload = async (id: number) => {
     const uploadClient = uploadClients.current.find((item: IClient) => {
       return item.id === id;
-    });
+    }) as IClient;
     const { client } = uploadClient;
     // 取消分片上传。
     await client.abortUpload();
@@ -152,7 +155,7 @@ const IndexView = () => {
           const { progress, id, name, status } = item;
           const calcProgress = Math.round(progress * 10000) / 100 + '%';
           return (
-            <div className="upload-item" key={id}>
+            <div className="upload-item" key={id+'A'}>
               <div>
                 <div className="title">{name}</div>
               </div>

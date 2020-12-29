@@ -4,7 +4,7 @@ import { Button, message, Upload } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import { statusMap, statusTextMap } from '../constants';
 import { IResource, IError } from '../type';
-// 0 失败 1成功 2进行中 3暂停 4取消 5未开始 6报错
+import { config } from '../utils/config';
 
 const IndexView = () => {
   const [status, setStatus] = useState(statusMap.wait);
@@ -18,13 +18,6 @@ const IndexView = () => {
   }, []);
 
   const getClient = () => {
-    // todo 此处请填写自己的配置信息
-    const config = {
-      server: 'xxx',
-      enterpriseId: 'xxx',
-      sdkToken: 'xxx',
-      storeType: 'xxx'
-    };
     const client = xyUpload.createClient(config);
 
     client.on('success', (res: IResource) => {

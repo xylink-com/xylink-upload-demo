@@ -4,6 +4,7 @@ import { Button, message, Upload } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import { statusMap, statusTextMap } from '../constants';
 import { IClient, IFileData, IError, IResource } from '../type';
+import { config } from '../utils/config';
 
 const IndexView = () => {
   const uploadClients = useRef<IClient[]>([]);
@@ -30,13 +31,6 @@ const IndexView = () => {
   };
 
   const getClient = (id: number) => {
-    // todo 此处请填写自己的配置信息
-    const config = {
-      server: 'xxx',
-      enterpriseId: 'xxx',
-      sdkToken: 'xxx',
-      storeType: 'xxx'
-    };
     const client = xyUpload.createClient(config);
 
     client.on('success', (res: IResource) => {
@@ -155,7 +149,7 @@ const IndexView = () => {
           const { progress, id, name, status } = item;
           const calcProgress = Math.round(progress * 10000) / 100 + '%';
           return (
-            <div className="upload-item" key={id+'A'}>
+            <div className="upload-item" key={id + 'A'}>
               <div>
                 <div className="title">{name}</div>
               </div>

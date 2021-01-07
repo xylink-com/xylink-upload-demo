@@ -1,5 +1,5 @@
 ## XY Upload SDK DEMO
-此项目是小鱼上传sdk的使用示例demo，包含单文件上传和多文件上传的使用方法
+此项目是小鱼上传sdk的使用示例demo
 
 技术栈：react+typescript
 ### 1. 准备工作

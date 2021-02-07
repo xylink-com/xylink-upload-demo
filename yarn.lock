@@ -2170,16 +2170,33 @@
   resolved "http://10.80.84.176:4873/@xtuc%2flong/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@xylink/xy-upload-sdk@^0.0.1-beta.1", "@xylink/xy-upload-sdk@^0.0.1-beta.5":
-  version "0.0.1-beta.1"
-  resolved "https://registry.yarnpkg.com/@xylink/xy-upload-sdk/-/xy-upload-sdk-0.0.1-beta.1.tgz#cfb0cafffdccf4f38ea81d656be829b9d062d753"
-  integrity sha512-jlFpE3hFDus12elNCtT4nOLy9RvoNvIFLOV8d3JouWnkBB2IR4nPuTdMsLwklf2zYJQHb2eyUP/QzDOl5UYUMw==
+"@xylink/xy-upload-sdk@^0.0.2-beta.0":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@xylink/xy-upload-sdk/-/xy-upload-sdk-0.0.2.tgz#9bfa4c339b633deb1e81801296e480cf346e6a61"
+  integrity sha512-W9L3yhFBiVob2rs05xyguSL1W2CwZbqxMu1L5ZtWJ9/HktKOD+RlGWu3zfrBH6AGzmonBhs9Z+Xg1YwOzH0MPw==
   dependencies:
     "@types/react" "^17.0.0"
-    "@xylink/xy-upload-sdk" "^0.0.1-beta.5"
+    "@xylink/xy-upload-sdk" "^0.0.2-beta.0"
     add-asset-html-webpack-plugin "^3.1.3"
     ali-oss "^6.12.0"
     antd "^4.9.4"
+    cross-env "^7.0.3"
+    eslint-loader "^4.0.2"
+    js-base64 "^3.4.5"
+    uglifyjs-webpack-plugin "^2.2.0"
+    xss "^1.0.8"
+
+"@xylink/xy-upload-sdk@^0.0.3-beta.0":
+  version "0.0.3-beta.0"
+  resolved "https://registry.yarnpkg.com/@xylink/xy-upload-sdk/-/xy-upload-sdk-0.0.3-beta.0.tgz#eb2fda89db4811a7c6dc692796485602b67622d0"
+  integrity sha512-7NUcMrd8Ddx2bEW5/zT4r3SPnBapSjeqkrBz3lIKugr97io9agjhIMH65L4v3cC5paj2KsxkgRXni2oSweeXdQ==
+  dependencies:
+    "@types/react" "^17.0.0"
+    "@xylink/xy-upload-sdk" "^0.0.2-beta.0"
+    add-asset-html-webpack-plugin "^3.1.3"
+    ali-oss "^6.12.0"
+    antd "^4.9.4"
+    cross-env "^7.0.3"
     eslint-loader "^4.0.2"
     js-base64 "^3.4.5"
     uglifyjs-webpack-plugin "^2.2.0"
@@ -3797,7 +3814,14 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.2:
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
+cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "http://10.80.84.176:4873/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha1-9zqFudXUHQRVUcF34ogtSshXKKY=
